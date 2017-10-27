@@ -32,7 +32,7 @@ if (false) {
     print "Server is in MAINTENANCE";
     exit;
 }
-
+require('../../../config.php');
 
 $fullcheck = false;
 
