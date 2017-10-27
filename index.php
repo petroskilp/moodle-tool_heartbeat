@@ -94,6 +94,12 @@ function failed($reason) {
     echo "Failed: $reason";
     exit;
 }
+$testing = get_config('tool_heartbeat', 'testing');
+if ($testing == 'error') {
+    failed('Teste de falha fake');
+} else if ($testing == 'warn') {
+    failed('Teste de alerta fake');
+}
 
 $testfile = $CFG->dataroot . "/tool_heartbeat.test";
 $size = file_put_contents($testfile, '1');
